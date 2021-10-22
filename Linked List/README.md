@@ -49,5 +49,8 @@ A simple singly linked list is very easy to implement. We need to create a class
         }
     }
 ```
+To explain what I have done, I need to start with the private class declaration part first. The class is made private so that only the methods inside SinglyLinkedList are able to call te class and create an instance from it. This is to ensure that the linkage in linked list is always in control and reduce the chances of breaking. In the private class, we have a constructor there that will accepts one integer argument. The constructor will "build" a new node and store the integer in the node. The new node will always point to "null" by default as I am appending the new node to the end of the linked list. As a new node is always the last node in a singly linked list (for now), the new node will always point ot "null". Voila, a basic singly lineked list class is now created. <br>
+&nbsp;*p/s: null is a keyword, which basically means the empty or void value.*
+
 
 
