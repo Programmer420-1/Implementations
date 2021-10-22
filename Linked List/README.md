@@ -52,8 +52,34 @@ A simple singly linked list is very easy to implement. We need to create a class
         }
     }
 ```
-To explain what I have done, I need to start with the private class declaration part first. The class is made private so that only the methods inside SinglyLinkedList are able to call te class and create an instance from it. This is to ensure that the linkage in linked list is always in control and reduce the chances of breaking. In the private class, we have a constructor there that will accepts one integer argument. The constructor will "build" a new node and store the integer in the node. The new node will always point to "null" by default as I am appending the new node to the end of the linked list. As a new node is always the last node in a singly linked list (for now), the new node will always point ot "null". Voila, a basic singly lineked list class is now created. <br>
+To explain what I have done, I need to start with the private class declaration part first. The class is made private so that only the methods inside SinglyLinkedList are able to call te class and create an instance from it. This is to ensure that the linkage in linked list is always in control and reduce the chances of breaking. In the private class, we have a constructor there that will accepts one integer argument. The constructor will "build" a new node and store the integer in the node. The new node will always point to "null" by default as I am appending the new node to the end of the linked list. As a new node is always the last node in a singly linked list, the new node will always point ot "null". Voila, a basic singly linked list class is now created. I have add more methods into the class so that the linked list serves more functionality. If you are interested you can check it out on my GitHub Implementation repo. <br>
 &nbsp;*p/s: null is a keyword, which basically means the empty or void value.*
+#
+### A Doubly Linked List
+A doubly linked list works almost the same as the singly linked list, except that a doubly linked list can be iterate from both ends. To implement it, we just need to create a class with 2 attributes, 1 private class and a few methods for functionality.
+```
+    class DoublyLinkedList{
+        private Node head = null;
+        private Node tail = null;
+        
+        private class Node{
+            int data;
+            Node next;
+            Node prev;
+            Node(int i){
+                this.data = i;
+                this.next = null;
+                this.prev = null;
+            }
+        }
+        
+        public void printAll(){
+            
+        }
+    
+    }
+    
+```
 
 
 
