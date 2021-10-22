@@ -74,12 +74,50 @@ A doubly linked list works almost the same as the singly linked list, except tha
         }
         
         public void printAll(){
-            
+            Node n = head;
+            while (n.next != null){
+                System.out.print(n.data+ " ");
+                n= n.next;
+            }
         }
-    
+        
+        public void printAll(boolean reverse){
+            Node n = tail;
+            while (n.prev != null){
+                System.out.print(n.data + " ");
+                n = n.prev;
+            }
+        }
+        
+        public void add(int i){
+            if (head = null){
+                head = new Node(i);
+                tail = head;
+            }
+            else{
+                Node n = head;
+                while (true){
+                    if(n.next == null){
+                        tail = new Node(i);
+                        tail.prev = n;
+                        n.next = tail;
+                        break;
+                    }
+                    n = n.next;
+                }
+            }
+        }
     }
     
 ```
+For a doubly linked list, the class now has 2 private attributes, that are head and tail. Tail is introduced to reference the last node of linked list. Besides taht, each node now has a new attribute, which is the prev attribute. This is to store the reference to its previous nodes. With these new attributes, we now can iterate from the head tot the tail of the linked list or the other way around. Hence, more functionality can be realized with ease with this features of doubly linked list. For example, we can insert a new node at any position we want to, whether it is position from the tail or from the head. To insert at a position from the tail, we can create a method that takes in negative integer argument to indicates the node is to be inserted at a position counted from the tail. 
+<br>
+#
+### Summary
+For now, I think that linked list is the simplest array-like data structures compared to other data structures. Although i haven't implemented the Circular Linked List by myself, but i think its working principle is still the same. To achieve that, we just need to point the last node of a linked list to the head of the same linked list so that the linked list can form a close loop, rather than a long linear string.
+<br>
+*Edited 22/10/2021*
+
 
 
 
