@@ -115,7 +115,7 @@ For a doubly linked list, the class now has 2 private attributes, that are head 
 #
 ### Summary
 For now, I think that linked list is the simplest array-like data structures compared to other data structures. Although i haven't implemented the Circular Linked List by myself, but i think its working principle is still the same. To achieve that, we just need to point the last node of a linked list to the head of the same linked list so that the linked list can form a close loop, rather than a long linear string.
-<br>
+<br><br>
 *Edited 22/10/2021*
 
 
