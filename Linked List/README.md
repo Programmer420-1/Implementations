@@ -11,5 +11,43 @@ With these concepts in my mind, I can finally start implementing the class of a 
 #
 ### A Singly Linked List
 A simple singly linked list is very easy to implement. We need to create a class, which contain only 1 attribute, 1 private class and a few methods for functionality.
+```
+    class SinglyLinekedList{
+    private Node head = null;
+        
+        private class Node{
+            Node next = null;
+            int data;
+            Node(int i){
+                this.next = null;
+                this.data = i;
+            }
+        }
+        
+        public void printAll(){
+            Node n = head;
+            while(n.next != null){
+                System.out.print(n.data + " ");
+                n = n.next;
+            }
+        }
+        
+        public void add(int i){
+            if (head == null){
+                head = new Node(i);
+            }
+            else{
+                Node n = head;
+                while (true){
+                    if(n.next == null){
+                        n.next = new Node(i);
+                        break
+                    }
+                    n = n.next;
+                }         
+            }            
+        }
+    }
+```
 
 
