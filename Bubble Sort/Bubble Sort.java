@@ -28,11 +28,12 @@ class Algorithm<T extends Comparable<T>>{
 
 class Main{
     public static void main(String[] args){
-        Double[] arr = {1.0,2.0,6.0,3.0,8.0,9.0,2.0,1.0};
-        Algorithm<Double> algo = new Algorithm<Double>(arr);
-        Double[] bubbleSorted = algo.BubbleSort();
+        Character[] arr = {'A','C','G','E'};
+        Algorithm<Character> algo = new Algorithm<>(arr);
+        Character[] bubbleSorted = algo.BubbleSort();
         for (int i = 0; i < bubbleSorted.length ; i++){
             System.out.print(bubbleSorted[i] + " ");
         }
     }
+   
 }
