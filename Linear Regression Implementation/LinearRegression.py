@@ -17,7 +17,7 @@ class LinearRegression:
         pass
     
     # method to start the training process
-    def fit(self, X_train, y_train, val_split = None, epoch = 1, optimizer = None, learning_rate = 0.001, batch_size = 1, metrics = {}):
+    def fit(self, X_train, y_train, val_split = None, epoch = 1, optimizer = None, learning_rate = 0.001, batch_size = 1, metrics = {}, quiet = True):
         # model initialization
         self.learning_rate = learning_rate
         self.batch_size = batch_size
@@ -37,16 +37,24 @@ class LinearRegression:
         # random initialization of weight parameters
         self.weight = np.random.rand(self.X_train.shape[1])*5
         
-        with trange(epoch, unit="Epoch") as pbar:
-            for i in pbar:
-                pbar.set_description(f"Epoch #{i+1}: ")
+        if quiet:
+            for i in range(epoch):
                 if optimizer == "SGD":
-                    # print(f"{i+1}/{epoch}")
                     self._SGD()
                 else:
-                    # print(f"{i+1}/{epoch}")
                     self._BGD()
                 self.evaluate(i,metrics=metrics) if val_split is not None else None
+        else:
+            with trange(epoch, unit="Epoch") as pbar:
+                for i in pbar:
+                    pbar.set_description(f"Epoch #{i+1}: ")
+                    if optimizer == "SGD":
+                        # print(f"{i+1}/{epoch}")
+                        self._SGD()
+                    else:
+                        # print(f"{i+1}/{epoch}")
+                        self._BGD()
+                    self.evaluate(i,metrics=metrics) if val_split is not None else None
 
         
     # private method to calculate cost
