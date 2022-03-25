@@ -5,7 +5,7 @@ The main concept behind this algorithm is compare an element with adjacent eleme
 #
 ### Time complexity of bubble sort algorithm
 Consider the following code:
-```
+```java
     int[] arr = {5,4,3,2,1};
     for(int i = 0; i < arr.length ; i++){
         boolean swapped = false;
