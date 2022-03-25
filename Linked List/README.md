@@ -14,8 +14,8 @@ With these concepts in my mind, I can finally start implementing the class of a 
 #
 ### A Singly Linked List
 A simple singly linked list is very easy to implement. We need to create a class, which contain only 1 attribute, 1 private class and a few methods for functionality.
-```
-    class SinglyLinekedList{
+```java
+    class SinglyLinkedList{
     private Node head = null;
         
         private class Node{
